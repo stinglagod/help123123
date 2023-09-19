@@ -26,6 +26,7 @@ class OrderEditForm extends CompositeForm
     public $name;
     public $code;
     public $contact_id;
+    public $files = [];
 
     public $note;
 
@@ -52,7 +53,7 @@ class OrderEditForm extends CompositeForm
             [['name','note'], 'string'],
             [['name'],'string', 'max' => 100],
             [['code'],'string', 'max' => 50   ],
-            ['files','file','skipOnEmpty' => true,'maxFiles'=>5],
+            [['files'],'file', 'maxFiles'=>5],
         ];
     }
 
@@ -70,7 +71,6 @@ class OrderEditForm extends CompositeForm
             'responsible_id' => 'Менеджер',
             'current_status' => 'Статус',
             'contact_id' => 'Заказчик',
-            'files' => 'Добавить Эскиз',
         ];
     }
 
