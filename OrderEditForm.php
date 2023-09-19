@@ -53,7 +53,6 @@ class OrderEditForm extends CompositeForm
             [['name','note'], 'string'],
             [['name'],'string', 'max' => 100],
             [['code'],'string', 'max' => 50   ],
-            [['files'],'file', 'maxFiles'=>5],
         ];
     }
 
