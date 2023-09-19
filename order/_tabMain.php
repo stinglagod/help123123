@@ -97,6 +97,7 @@ use kartik\file\FileInput;
             <?= $form->field($model, 'note')->textInput(['maxlength' => true,'disabled' => $order->readOnly('note')]) ?>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-6">
             <?= $form->field($order, 'current_status')->dropDownList(OrderHelper::statusList(), ['prompt' => 'Выберите','disabled' => true]) ?>
@@ -105,19 +106,17 @@ use kartik\file\FileInput;
             <?= $form->field($model, 'responsible_id')->dropDownList(User::getResponsibleList(), ['prompt' => 'Выберите','disabled' => $order->readOnly('responsible_id')]) ?>
         </div>
     </div>
-    <?= $form->field($model, 'files[]')->widget(FileInput::class, [
+    <?= $form->field($model->files, 'files[]')->label(false)->widget(FileInput::class, [
         'options' => [
-            'accept' => '*',
             'multiple' => true,
         ],
         'pluginOptions' => [
-            'maxFileCount' => 5,
             'showPreview' => false,
             'showCaption' => true,
             'showRemove' => true,
-            'showUpload' => false,
-        ],
-    ]); ?>
+            'showUpload' => false
+        ]
+    ]) ?>
     <div class="row">
         <div class="col-md-6">
 <!--            --><?//=$model->status->name?>
