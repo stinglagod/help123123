@@ -56,6 +56,13 @@ $items = [
             'dataProvider' => $movements_provider,
         ]),
     ],
+    [
+        'label'=>'<i class="glyphicon glyphicon-list-alt"></i> Эскизы',
+        'content'=>$this->render('_tabSketch', [
+            'order'=>$order,
+        ]),
+    ],
+
 //    [
 //        'label'=>'<i class="glyphicon glyphicon-list-alt"></i> Движения товаров',
 //        'content'=>$this->render('_tabWarehouse', [
